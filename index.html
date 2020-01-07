@@ -1,0 +1,591 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shiny Jewels</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+	<link href="css/estilo.css" rel="stylesheet">
+    <link rel="shortcut icon" href="imagens/icon.png" >
+      <meta name="viewport" content="width=device-width. initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="css/lightbox.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header>
+            <div class="menu">
+              <ul class="menu-list">
+
+                <li>
+                  <a href="#">Aliancas</a>
+                   <ul class="sub-menu">
+                    <li><a href="#compromisso" class="comp">Aliancas de compromisso</a></li>
+                    <li><a href="#casamento" class="casa">Aliancas de casamento</a></li>
+
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#">Relogios</a>
+                   <ul class="sub-menu">
+                    <li><a href="#feminino" class="fem">Relogios Femininos</a></li>
+                    <li><a href="#masculino" class="masc">Relogios Masculinos</a></li>
+
+                    </ul>
+                </li>
+
+                <li>
+                  <a href="#">Acessorios</a>
+                   <ul class="sub-menu">
+                    <li><a href="#pulseiras" class="pul">Pulseiras</a></li>
+                    <li><a href="#brincos" class="brin">Brincos</a></li>
+                  </ul>
+                </li>
+                <li class="carrinho">
+                  <a  href="#janela1" rel="modal">Carrinho de compra</a>
+                </li>
+                </ul>    
+            </div>
+
+             <div class= "banner">
+                               
+                <div class="container col-md-12">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="imagens/banner1.jpg" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="imagens/banner2.jpg" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="imagens/banner3.jpg" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+            </div>
+        </header>
+ 
+ 
+        <!-- mascara para cobrir o site -->  
+         <div class="window" id="janela1">
+            <a href="#" class="fechar">X Fechar</a>
+            <h4>Carrinho de compra</h4>
+             <form onsubmit="return false">
+                 <!-- DADOS DE LOGIN -->
+                <fieldset>
+                 <legend>Dados de login</legend>
+                 <table class="form" cellspacing="10">
+                  <tr>
+                   <td>
+                    <label for="email">Nome*: </label>
+                       <br>
+                   </td>
+                   <td align="left">
+                    <input type="text" name="Nome">
+                       <br><br>
+                   </td>
+                  </tr>
+                   <tr>
+                   <td>
+                    <label for="email">Sobrenome: </label>
+                       <br><br>
+                   </td>
+                   <td align="left">
+                    <input type="text" name="Sobrenome">
+                       <br><br>
+                   </td>
+                  </tr>
+                  <tr>
+                   <td>
+                    <label for="email">E-mail*: </label>
+                       <br><br>
+                   </td>
+                   <td align="left">
+                    <input type="text" name="email">
+                       <br><br>
+                   </td>
+                  </tr>
+                  <tr>
+                   <td>
+                    <label for="login">Login*: </label>
+                      <br><br>
+                   </td>
+                   <td align="left">
+                    <input type="text" name="login">
+                       <br><br>
+                   </td>
+                  </tr>
+                  <tr>
+                   <td>
+                    <label for="pass">Senha*: </label>
+                       <br><br>
+                   </td>
+                   <td align="left">
+                    <input type="password" name="pass">
+                       <br><br>
+                   </td>
+                  </tr>
+                  <tr>
+                   <td align="left">
+                  </tr> 
+                 </table>
+                </fieldset>  
+                 <br><br>
+            <table id="products-table">
+                <tbody>
+                     <tr>
+                       <th>Produto</th>
+                       <th>Preço</th>
+                     </tr> 
+                </tbody>
+                        <tr>
+                       <th><input type="submit" value="Calcular Total" class="btnTotal"></th>
+                       <th id="total"></th>
+                     </tr>              
+                
+            </table>
+                                 <br><br>
+                <input class="col-md-offset-5" type="submit" value = "Comprar" onclick="funcao1()">
+             </form>
+        </div>
+ 
+<!-- mascara para cobrir o site -->  
+<div id="mascara"></div>
+        
+    <section class="produto">
+        <div class="container col-md-offset-2 col-md-8" style="margin-bottom: 30px;" >
+            <div class = "relogio" id ="feminino">
+                <div class="prod col-xs-12 col-md-4 col-sm-6 f" >
+                    <div><a href="imagens/relogiof1.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiof1.jpg" title="Img#1" /></a></div>
+                    <p class="nome" >
+                        Relógio<br> Speedo Feminino
+                    </p>
+                    <p class="preco">
+                        R$158.90
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="158.90" data-prod="Relógio Speedo Feminino" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 f" >
+                    <div><a href="imagens/relogiof2.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiof2.jpg"/></a></div>
+                    <p class="nome" data-prod="Relógio Casio Vintage">
+                        Relógio <br>Casio Vintage
+                        
+                    </p>
+                    <p class="preco">
+                        R$245.65
+                        <input type="submit"  value="+ ao carrinho" class="add-carrinho" data-val="245.65" data-prod="Relógio Casio Vintage">
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 f" >
+                    <div><a href="imagens/relogiof3.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiof3.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Blubox Banda de<br>Aço de Quartzo Rosê
+                    </p>
+                    <p class="preco">
+                        R$ 99.00
+                         <input type="submit"  value="+ ao carrinho" class="add-carrinho" data-val="99.00" data-prod="Relógio Blubox Banda de Aço de Quartzo Rosê" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 f" >
+                    <div><a href="imagens/relogiof4.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiof4.jpg"/></a></div>
+                    <p class="nome">
+                       Relógio <br> Skone Preto
+                    </p>
+                    <p class="preco">
+                        R$ 131.99
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="131.99" data-prod="Rélogio Skone Preto" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 f" >
+                    <div><a href="imagens/relogiof5.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiof5.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Champion<br> Elegance Feminino
+                    </p>
+                    <p class="preco">
+                        R$ 224.90
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="224.90" data-prod="Relógio Champion Elegance Feminino" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 f" >
+                    <div><a href="imagens/relogiof6.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiof6.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Mondaine<br> Feminino Analógico 
+                    </p>
+                    <p class="preco">
+                        R$ 139.00
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="139.00" data-prod="Relógio Mondaine Feminino Analógico" >
+                    </p>
+                </div>
+            </div>
+
+            <div class = "relogio" id ="masculino">
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 m" >
+                    <div><a href="imagens/relogiom1.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiom1.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Masculino<br> Skone Marrom 
+                    </p>
+                    <p class="preco">
+                        R$ 111.30
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="111.30" data-prod="Relógio Masculino Skone Marrom" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 m" >
+                    <div><a href="imagens/relogiom2.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiom2.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Skmei<br> Analógico
+                    </p>
+                    <p class="preco">
+                        R$ 137.70
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="137.70" data-prod="Relógio Skmei Analógico" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 m" >
+                    <div><a href="imagens/relogiom3.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiom3.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Lince P2PX<br> Analógico 5 ATM
+                    </p>
+                    <p class="preco">
+                        R$ 199.00
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="199.00" data-prod="Relógio Lince P2PX Analógico 5 ATM" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 m" >
+                    <div><a href="imagens/relogiom4.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiom4.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Skone <br>Analógico Casual Azul
+                    </p>
+                    <p class="preco">
+                        R$ 150.04
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="150.04" data-prod="Relógio Skone Analógico Casual Azul" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 m" >
+                    <div><a href="imagens/relogiom5.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiom5.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Mondaine <br>Masculino Preto e Marrom 
+                    </p>
+                    <p class="preco">
+                        R$ 149.00
+                     <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="149.00" data-prod="Relógio Mondaine Masculino Preto e Marrom" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 m" >
+                    <div><a href="imagens/relogiom6.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/relogiom6.jpg"/></a></div>
+                    <p class="nome">
+                        Relógio Champion<br> CN20006Z Prata
+                    </p>
+                    <p class="preco">
+                        R$ 99.99
+                     <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="99.00" data-prod="Relógio Champion CN20006Z Prata" >
+                    </p>
+                </div>
+            </div>
+
+            <div class = "joias" id ="brincos">
+                <div class="prod col-xs-12 col-md-4 col-sm-6 b" >
+                    <div><a href="imagens/brinco1.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/brinco1.jpg"/></a></div>
+                    <p class="nome">
+                        Brinco Asa de <br>Anjo Grande Rose
+                    </p>
+                    <p class="preco">
+                        R$ 27.99
+                         <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="27.99" data-prod="Brinco Asa de Anjo Grande Rose" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 b" >
+                    <div><a href="imagens/brinco2.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/brinco2.jpg"/></a></div>
+                    <p class="nome">
+                        Brinco Coroa<br> de Prata
+                    </p>
+                    <p class="preco">
+                        R$ 39.90
+                         <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="39.90" data-prod="Brinco Coroa de Prata" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 b" >
+                    <div><a href="imagens/brinco3.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/brinco3.jpg"/></a></div>
+                    <p class="nome">
+                        Brinco Argola Pequena <br>em Ouro Amarelo
+                    </p>
+                    <p class="preco">
+                        R$ 114.00
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="114.00" data-prod="Brinco Argola Pequena em Ouro Amarelo" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 b" >
+                    <div><a href="imagens/brinco4.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/brinco4.jpg"/></a></div>
+                    <p class="nome">
+                        Brinco Gota<br> de Drusa
+                    </p>
+                    <p class="preco">
+                        R$ 69.90
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="69.90" data-prod="Brinco Gota de Drusa" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 b" >
+                    <div><a href="imagens/brinco5.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/brinco5.jpg"/></a></div>
+                    <p class="nome">
+                        Brinco Longo Pedra Natural<br> de Ônix Facetada
+                    </p>
+                    <p class="preco">
+                        R$ 489.90
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="69.90" data-prod="Brinco Gota de Drusa" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 b" >
+                    <div><a href="imagens/brinco6.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/brinco6.jpg"/></a></div>
+                    <p class="nome">
+                        Brincos De Franjas<br> Longo Ouro
+                    </p>
+                    <p class="preco">
+                        R$ 121.00
+                         <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="121.00" data-prod="Brincos De Franjas Longo Ouro" >
+                    </p>
+                </div>
+            </div>
+
+            <div class = "joias" id ="pulseiras">
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 p" >
+                    <div><a href="imagens/pulseira1.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/pulseira1.jpg"/></a></div>
+                    <p class="nome">
+                        Pulseira Divanet<br> Berloques Prata e Rosa
+                    </p>
+                    <p class="preco">
+                        R$ 99.00
+                         <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="99.00" data-prod="Pulseira Divanet Berloques Prata e Rosa" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 p" >
+                    <div><a href="imagens/pulseira2.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/pulseira2.jpg"/></a></div>
+                    <p class="nome">
+                        Pulseira Divanet <br>Luxo Dourada
+                    </p>
+                    <p class="preco">
+                        R$ 139.90
+                      <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="139.00" data-prod="Pulseira Divanet Luxo Dourada" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 p" >
+                    <div><a href="imagens/pulseira3.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/pulseira3.jpg"/></a></div>
+                    <p class="nome">
+                        Pulseira Dona Diva <br>de Pérolas Dourada
+                    </p>
+                    <p class="preco">
+                        R$ 53.94
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="53.94" data-prod="Pulseira Dona Diva de Pérolas Dourada" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 p" >
+                    <div><a href="imagens/pulseira4.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/pulseira4.jpg"/></a></div>
+                    <p class="nome">
+                        Pulseira Divanet<br> Festa Dourada
+                    </p>
+                    <p class="preco">
+                        R$ 109.90
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="109.90" data-prod="Pulseira Dona Diva de Pérolas Dourada" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 p" >
+                    <div><a href="imagens/pulseira5.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/pulseira5.jpg"/></a></div>
+                    <p class="nome">
+                        Pulseira prata turca <br>com pedras e zircônio
+                    </p>
+                    <p class="preco">
+                        R$ 89.40
+                     <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="89.40" data-prod="Pulseira prata turca com pedras e zircônio" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 p" >
+                    <div><a href="imagens/pulseira6.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/pulseira6.jpg"/></a></div>
+                    <p class="nome">
+                        Pulseira de ouro 18k <br>pingente de coração
+                    </p>
+                    <p class="preco">
+                        R$ 2.386.80
+                    <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="2.386.00" data-prod="Pulseira de ouro 18k pingente de coração" >
+                    </p>
+                </div>
+            </div>
+
+            <div class = "alianca" id ="casamento">
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 ca" >
+                    <div><a href="imagens/casamento1.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/casamento1.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Casamento Ouro<br> e Prata Polidas
+                    </p>
+                    <p class="preco">
+                        R$ 479.92
+                       <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="479.92" data-prod="Alianças Casamento Ouro e Prata Polidas" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 ca" >
+                    <div><a href="imagens/casamento2.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/casamento2.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Casamento Ouro Rosê
+                    </p>
+                    <p class="preco">
+                        R$ 2.155.93
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="2.155.93" data-prod="Alianças Casamento Ouro Rosê" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 ca" >
+                    <div><a href="imagens/casamento3.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/casamento3.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Casamento <br>Ouro Polidas 5mm
+                    </p>
+                    <p class="preco">
+                        R$ 1.763.93
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="1.763.93" data-prod="Alianças Casamento Ouro Polidas 5mm" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 ca" >
+                    <div><a href="imagens/casamento4.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/casamento4.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Casamento<br> Ouro Batimentos Cardíacos
+                    </p>
+                    <p class="preco">
+                        R$ 2.743.93
+                <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="2.743.93" data-prod="Alianças Casamento Ouro Batimentos Cardíacos" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 ca" >
+                    <div><a href="imagens/casamento5.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/casamento5.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Casamento <br>Ouro Polidas 4 mm
+                    </p>
+                    <p class="preco">
+                        R$ 1.441.93
+                        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="1.441.93" data-prod="Alianças Casamento Ouro Polidas 4 mm" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 ca" >
+                    <div><a href="imagens/casamento6.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/casamento6.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Casamento <br>Ouro Foscas 6mm 
+                    </p>
+                    <p class="preco">
+                        R$ 2.351.93
+                       <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="2.351.93" data-prod="Alianças Casamento Ouro Foscas 6mm" >
+                    </p>
+                </div>
+            </div>
+
+            <div class = "alianca" id ="compromisso">
+                <div class="prod col-xs-12 col-md-4 col-sm-6 c" >
+                    <div><a href="imagens/alianca1.jpg" data-lightbox="roadtrip"><img  class="img-responsive" src="imagens/alianca1.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Compromisso <br>Prata Polidas e Diamantadas
+                    </p>
+                    <p class="preco">
+                        R$ 135.92
+                <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="135.92" data-prod="Alianças Compromisso Prata Polidas e Diamantadas" >
+                    </p>
+                </div>
+                <div class="prod col-xs-12 col-md-4 col-sm-6 c" >
+                    <div><a href="imagens/alianca2.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/alianca2.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Compromisso <br>Prata Polidas 5mm
+                    </p>
+                    <p class="preco">
+                        R$ 84.95
+                       <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="84.95" data-prod="Alianças Compromisso Prata Polidas 5mm" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 c" >
+                    <div><a href="imagens/alianca3.jpg" data-lightbox="roadtrip"><img class="img-responsive" class="img-responsive" src="imagens/alianca3.jpg" /></a></div>
+                    <p class="nome">
+                        Alianças Namoro Prata<br> Foscas Infinito em Ouro
+                    </p>
+                    <p class="preco">
+                        R$ 195.93
+         <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="195.93" data-prod="Alianças Namoro Prata Foscas Infinito em Ouro" >
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 c" >
+                    <div><a href="imagens/alianca4.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/alianca4.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Compromisso <br>Prata Diamantadas 5mm
+                    </p>
+                    <p class="preco">
+                        R$ 119.92
+                <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="119.92" data-prod="Alianças Compromisso Prata Diamantadas 5mm">
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 c" >
+                    <div><a href="imagens/alianca5.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/alianca5.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Namoro <br>Prata Foscas 5mm
+                    </p>
+                    <p class="preco">
+                        R$ 135.92
+                       <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="135.92" data-prod="Alianças Namoro Prata Foscas 5mm">
+                    </p>
+                </div>
+                <div class=" prod col-xs-12 col-md-4 col-sm-6 c" >
+                    <div><a href="imagens/alianca6.jpg" data-lightbox="roadtrip"><img class="img-responsive" src="imagens/alianca6.jpg"/></a></div>
+                    <p class="nome">
+                        Alianças Compromisso <br>Prata Polidas Gravação Externa
+                    </p>
+                    <p class="preco">
+                        R$ 127.92
+        <input type="submit" value="+ ao carrinho" class="add-carrinho" data-val="127.92   " data-prod="Alianças Compromisso Prata Polidas Gravação Externa">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="footer col-md-12 ">
+            <div class="row">
+                    <br><br>
+                    <a class="ft-link monitor" data-monitor-category = "button" data-monitor-action = "redirect-footer" data-monitor-label="home" href="index.html" >Home</a><span> / </span>
+                    <a class="ft-link monitor" data-monitor-category = "button" data-monitor-action = "redirect-footer" data-monitor-label="quemsomos" href="galeria.html">Quem somos</a><span> / </span>
+                    <a class="ft-link monitor" data-monitor-category = "button" data-monitor-action = "redirect-footer" data-monitor-label="contato" href="form.html">Contato</a>
+                    <br><br>
+                    <div class="col-md-4 col-md-offset-5">
+                        <a class="social-icon" href="" target="_blank">
+                            <img id="social-icon" class="img-responsive" src="./imagens/fb.png" />
+                        </a>
+                        <a class="social-icon" href="" target="_blank">
+                            <img id="social-icon" class="img-responsive" src="./imagens/inst.png" />
+                        </a>
+                        <a class="social-icon" href="" target="_blank">
+                            <img id="social-icon" class="img-responsive" src="imagens/yb.png" />
+                        </a>
+                    </div>
+
+            </div>
+        </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/produto.js"></script>
+        <script src="js/lightbox.js"></script>
+        
+    </body>
+
+</html>
