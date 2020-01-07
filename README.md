@@ -1,2 +1,2 @@
-# Shiny_Jawels
+﻿# Shiny_Jewels
 Desenvolvendo páginas web.
